@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    可访问的构造方法-->
+<!--    <bean id="bookDao" name="dao dao2" class="com.jensen.dao.impl.BookDaoImpl" scope="singleton"></bean>-->
+
+<!--    <bean id="bookService" class="com.jensen.service.impl.BookServiceImpl">-->
+<!--        <property name="bookDao" ref="bookDao"></property>-->
+<!--    </bean>-->
+
+<!--    静态工厂-->
+<!--    <bean id="bookDao" class="com.jensen.factory.StaticBookFactory" factory-method="getBookDao"></bean>-->
+
+<!--    实例工厂获取实例-->
+<!--    <bean id="instanceBookFactory"  class="com.jensen.factory.InstanceBookFactory"></bean>-->
+<!--    <bean id="bookDao" factory-bean="instanceBookFactory" factory-method="getBookDao"></bean>-->
+
+<!--    FactoryBean -->
+<!--    <bean id="bookDao" class="com.jensen.factory.MyBeanFactory"></bean>-->
+
+<!--    setter注入-->
+<!--    <bean id="bookService" class="com.jensen.service.impl.BookServiceImpl">-->
+<!--        <property name="bookDao" ref="bookDao"></property>-->
+<!--        <property name="number" value="10"></property>-->
+<!--    </bean>-->
+
+<!--    构造器注入-->
+<!--    <bean id="bookDao" name="dao dao2" class="com.jensen.dao.impl.BookDaoImpl"></bean>-->
+<!--    <bean id="bookService" class="com.jensen.service.impl.BookServiceImpl">-->
+<!--        <constructor-arg name="bookDao" ref="bookDao"></constructor-arg>-->
+<!--        <constructor-arg name="number" value="20"></constructor-arg>-->
+<!--    </bean>-->
+<!--    <bean id="bookDao" name="dao dao2" class="com.jensen.dao.impl.BookDaoImpl"></bean>-->
+<!--    <bean id="bookService" class="com.jensen.service.impl.BookServiceImpl">-->
+<!--        <constructor-arg type="com.jensen.dao.BookDao" ref="bookDao"></constructor-arg>-->
+<!--        <constructor-arg index="1" value="20"></constructor-arg>-->
+<!--    </bean>-->
+
+<!--    按类型自动装配-->
+<!--        <bean id="bookDao" name="dao dao2" class="com.jensen.dao.impl.BookDaoImpl"></bean>-->
+<!--        <bean id="bookService" class="com.jensen.service.impl.BookServiceImpl" autowire="byType"></bean>-->
+<!--    按名称自动装配-->
+<!--    <bean id="bookDao1" class="com.jensen.dao.impl.BookDaoImpl"></bean>-->
+<!--    <bean id="bookService" class="com.jensen.service.impl.BookServiceImpl" autowire="byName"></bean>-->
+<!--    按构造器自动装配-->
+<!--    <bean id="bookDao" name="dao dao2" class="com.jensen.dao.impl.BookDaoImpl"></bean>-->
+<!--    <bean id="bookService" class="com.jensen.service.impl.BookServiceImpl" autowire="constructor"></bean>-->
+
+<!--    集合注入-->
+<bean id="resourceService" class="com.jensen.service.impl.ResourceServiceImpl">
+    <property name="array">
+        <array>
+            <value>array1</value>
+            <value>array2</value>
+            <value>array3</value>
+        </array>
+    </property>
+    <property name="list">
+        <list>
+            <value>list1</value>
+            <value>list2</value>
+            <value>list3</value>
+        </list>
+    </property>
+    <property name="map">
+        <map>
+            <entry key="key1" value="value1"></entry>
+            <entry key="key2" value="value2"></entry>
+            <entry key="key3" value="value3"></entry>
+        </map>
+    </property>
+    <property name="properties">
+        <props>
+            <prop key="proKey1">value1</prop>
+            <prop key="proKey2">value2</prop>
+            <prop key="proKey3">value3</prop>
+        </props>
+    </property>
+    <property name="set">
+        <set>
+            <value>set1</value>
+            <value>set1</value>
+            <value>set2</value>
+            <value>set3</value>
+        </set>
+    </property>
+ </bean>
+
+<!--Bean的生命周期-->
+<!--    <bean id="bookDao" class="com.jensen.dao.impl.BookDaoImpl" init-method="init" destroy-method="destroy"></bean>-->
+    <bean id="bookDao" class="com.jensen.dao.impl.BookDaoImpl"></bean>
+
+</beans>
