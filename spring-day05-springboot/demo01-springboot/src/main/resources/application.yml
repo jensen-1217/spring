@@ -1,0 +1,8 @@
+
+enterprise:
+  name: jensen
+  age: 23
+  subjects:
+    - java
+    - 大数据
+    - 前端

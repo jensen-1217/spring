@@ -1,0 +1,23 @@
+#spring:
+#  profiles:
+#    active: @profile.active@
+#
+#---
+#spring:
+#  profiles: dev
+#server:
+#  port: 8081
+#
+#---
+#spring:
+#  profiles: test
+#server:
+#  port: 8082
+#
+#---
+#spring:
+#  profiles: pro
+#server:
+#  port: 8083
+server:
+  port: 8083
